@@ -1,5 +1,6 @@
 // FUNCTION COMPONENT  - É MAIS USADO
 import React from "react";
+import style from './Lista.module.scss';;
 
 // Não tem função obrigatorio - não precisa do render
 function Lista() {
@@ -15,12 +16,12 @@ function Lista() {
     }]
 
     return (
-        <aside>
+        <aside className={style.listaTarefas}>
             <h2>Estudos do Dia</h2>
             <u>
                 { tarefas.map( (item, index) => (
                     // react precisa de uma KEY para ter uma renderização dinamica
-                    <li key={index}>
+                    <li key={index} className={style.item}>
                         <h3> {item.tarefa} </h3>  
                         <span> {item.tempo} </span>
                     </li>
