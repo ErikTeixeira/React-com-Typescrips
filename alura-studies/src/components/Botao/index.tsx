@@ -1,4 +1,5 @@
 import React from "react";
+import style from './Botao.module.scss';
 // "Don't Repeat Yourself" -- CRIANDO UM COMPONENT NÃO PRECISA REPETIR ESTE CÓDIGO PODE REUTILIZAR ELE ONDE QUISER
 
 // "Single Responsibility Principle", "Princípio da responsabilidade única" -- significa que se queremos um botão e um formulário que tem apenas a responsabilidade de gerenciar o próprio formulário, podemos criar um componente só para formulário e o botão será outro componente com a responsabilidade única de renderizar um botão.
@@ -8,7 +9,7 @@ class Botao extends React.Component {
     render() {
         return (
             // retorna um HTML, que da para usar JS, chamado JSX
-            <button>
+            <button className={style.botao}>
                 Botão
             </button>
         )

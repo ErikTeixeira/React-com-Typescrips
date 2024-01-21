@@ -1,7 +1,8 @@
+### uso do - npm install -D typescript-plugin-css-modules
+
 # react
 
-npx create-react-app projeto --template typescript --use-npm 
-| cd projeto | npm start
+### npx create-react-app projeto --template typescript --use-npm | cd projeto | npm start
 
   npm start
     Starts the development server.
