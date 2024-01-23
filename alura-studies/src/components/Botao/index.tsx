@@ -4,13 +4,17 @@ import style from './Botao.module.scss';
 
 // "Single Responsibility Principle", "Princípio da responsabilidade única" -- significa que se queremos um botão e um formulário que tem apenas a responsabilidade de gerenciar o próprio formulário, podemos criar um componente só para formulário e o botão será outro componente com a responsabilidade única de renderizar um botão.
 
-class Botao extends React.Component {
+// A prop sempre vem como objeto - <{ texto:string }>
+// OU usar o tipo children que o - React.Component - já espera
+// {this.props.children}
+class Botao extends React.Component <{ texto:string }>{
     // função obrigatoria - render
     render() {
         return (
             // retorna um HTML, que da para usar JS, chamado JSX
             <button className={style.botao}>
-                Botão
+                {/* pegar o valor de dentro da prop */}
+                {this.props.texto}
             </button>
         )
     }

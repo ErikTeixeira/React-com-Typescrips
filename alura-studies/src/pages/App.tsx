@@ -4,6 +4,7 @@ import Lista from '../components/lista';
 // import './style.scss';
 // Usando CSS Modules - exporta um objeto - nunca tem o problema de sobreposição de css - pode ter nomes parecidos
 import style from './App.module.scss';
+import Cronometro from '../components/Cronometro';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       {/* Renderizar um component - <nome /> */}
       <Formulario />
       <Lista />
+      <Cronometro />
     </div>
   );
 }
