@@ -1,6 +1,7 @@
 // FUNCTION COMPONENT  - É MAIS USADO
 import React from "react";
-import style from './Lista.module.scss';;
+import Item from './Item';
+import style from './Lista.module.scss';
 
 // Não tem função obrigatorio - não precisa do render
 function Lista() {
@@ -21,10 +22,16 @@ function Lista() {
             <u>
                 { tarefas.map( (item, index) => (
                     // react precisa de uma KEY para ter uma renderização dinamica
-                    <li key={index} className={style.item}>
-                        <h3> {item.tarefa} </h3>  
-                        <span> {item.tempo} </span>
-                    </li>
+                    // <li key={index} className={style.item}>
+                    //     <h3> {item.tarefa} </h3>  
+                    //     <span> {item.tempo} </span>
+                    // </li>
+                    <Item 
+                        key={index}
+                        tarefa={item.tarefa}
+                        tempo={item.tempo}
+                        // OU - {...item} - bom se tiver varias informações, mas pode ter informações demais e pode ter informações não tipadas  o typescript reclamar
+                    />
                 ) ) }
             </u>
         </aside>

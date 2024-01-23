@@ -25,7 +25,12 @@ class Formulario extends React.Component {
                     <input type="time" step="1" name="tempo" id="tempo" min="00:00:00" max="01:30:00" required />
                 </div>
                 {/* Usar um component em outro  */}
-                <Botao />
+                <Botao 
+                    // criar uma PROP - propriedade
+                    texto="Adicionar"
+                    // Com o tipo Children é só Adicionar
+                    // Adicionar
+                />
 
             </form>
         )
