@@ -7,12 +7,16 @@ import style from './Botao.module.scss';
 // A prop sempre vem como objeto - <{ texto:string }>
 // OU usar o tipo children que o - React.Component - já espera
 // {this.props.children}
-class Botao extends React.Component <{ texto:string }>{
+// OPCIONAL - type?: "button" | "submit" | "reset" | undefined
+class Botao extends React.Component <{ texto:string, type?: "button" | "submit" | "reset" | undefined }>{
     // função obrigatoria - render
     render() {
+        // se o type não for passado o tipo padrão e button
+        const { type = "button" } = this.props;
+
         return (
             // retorna um HTML, que da para usar JS, chamado JSX
-            <button className={style.botao}>
+            <button type={type} className={style.botao}>
                 {/* pegar o valor de dentro da prop */}
                 {this.props.texto}
             </button>
