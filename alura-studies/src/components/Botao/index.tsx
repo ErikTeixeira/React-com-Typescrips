@@ -8,22 +8,46 @@ import style from './Botao.module.scss';
 // OU usar o tipo children que o - React.Component - já espera
 // {this.props.children}
 // OPCIONAL - type?: "button" | "submit" | "reset" | undefined
-class Botao extends React.Component <{ texto:string, type?: "button" | "submit" | "reset" | undefined }>{
+
+// Um componente customizado do react de algo comum tipo esse, não espera coisas padrãos como o onClick, só funciona o key sem tipar nele
+
+// onClick?: () => void   -  ele e opcional e é uma função que retorna void
+
+
+// Refatorando 
+interface Props {
+    type?: "button" | "submit" | "reset" | undefined,
+    onClick?: () => void,
+    children?: React.ReactNode
+}
+
+function Botao({ onClick, type, children }: Props) {
+    return (
+    <button  onClick={onClick} type={type} className={style.botao}>
+        {children}
+    </button>
+    )
+}
+
+/* 
+class Botao1 extends React.Component <{ 
+    texto:string, type?: "button" | "submit" | "reset" | undefined,
+    onClick?: () => void }>{
     // função obrigatoria - render
     render() {
         // se o type não for passado o tipo padrão e button
-        const { type = "button" } = this.props;
-
+        const { type = "button", onClick } = this.props;
+                // para funcionar o onClick, tem que colocar ele aqui
         return (
             // retorna um HTML, que da para usar JS, chamado JSX
-            <button type={type} className={style.botao}>
-                {/* pegar o valor de dentro da prop */}
+            <button  onClick={onClick} type={type} className={style.botao}>
+                {/* pegar o valor de dentro da prop /}
                 {this.props.texto}
             </button>
         )
     }
 }
-
+*/
 
 export default Botao;
 

@@ -19,6 +19,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    // configuração para que consiga fazer que funcione a string ir em lista para a dezena e unidade
+    "downlevelIteration": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [
