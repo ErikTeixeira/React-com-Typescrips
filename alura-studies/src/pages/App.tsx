@@ -20,6 +20,24 @@ function App() {
     })))
   }
 
+  function finalizarTarefa() {
+    if(selecionado) {
+      setSelecionado(undefined);
+
+      setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => {
+        if(tarefa.id  === selecionado.id) {
+          return {
+            ...tarefa,
+            selecionado: false,
+            completado: true
+          }
+        }
+        return tarefa;
+      } ))
+    }
+  }
+
+
   return (
     // se quiser criar uma casse no html e com className
     // <div className="AppStyle">  - css normal
@@ -30,7 +48,10 @@ function App() {
         tarefas={tarefas} 
         selecionaTarefa={selecionaTarefa}  
       />
-      <Cronometro selecionado={selecionado} />
+      <Cronometro 
+        selecionado={selecionado}
+        finalizarTarefa={finalizarTarefa}
+      />
     </div>
   );
 }
